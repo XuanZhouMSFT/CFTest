@@ -87,7 +87,7 @@ const SampleNamespace = {};
         }
 
         // create a new web worker
-        const webWorker = new Worker("functionssWorker.js");
+        const webWorker = new Worker("functionsworker.js");
         webWorker.addEventListener('message', function(event) {
             let jobResult = event.data;
             if (typeof(jobResult) == "string") {
