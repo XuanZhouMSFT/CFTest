@@ -191,7 +191,6 @@ function TEST_UI_THREAD(n) {
     return ret;
 }
 
-/** 
 CustomFunctions.associate("TEST", function(n) {
     return SampleNamespace.dispatchCalculationJob("TEST", [n]);
 });
@@ -222,4 +221,4 @@ CustomFunctions.associate("TEST_UI_THREAD", function(n) {
     return ret;
 });
 
-*/
+
