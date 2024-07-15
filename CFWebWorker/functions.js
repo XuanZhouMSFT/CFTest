@@ -7,7 +7,7 @@
  * @param {number} second Second number
  * @returns {number} The sum of the two numbers.
  */
-export function add(first, second) {
+function add(first, second) {
   return first + second;
 }
 
@@ -16,7 +16,7 @@ export function add(first, second) {
  * @customfunction
  * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
  */
-export function clock(invocation) {
+function clock(invocation) {
   const timer = setInterval(() => {
     const time = currentTime();
     invocation.setResult(time);
@@ -31,7 +31,7 @@ export function clock(invocation) {
  * Returns the current time
  * @returns {string} String with the current time formatted for the current locale.
  */
-export function currentTime() {
+function currentTime() {
   return new Date().toLocaleTimeString();
 }
 
@@ -41,7 +41,7 @@ export function currentTime() {
  * @param {number} incrementBy Amount to increment
  * @param {CustomFunctions.StreamingInvocation<number>} invocation
  */
-export function increment(incrementBy, invocation) {
+function increment(incrementBy, invocation) {
   let result = 0;
   const timer = setInterval(() => {
     result += incrementBy;
@@ -59,7 +59,7 @@ export function increment(incrementBy, invocation) {
  * @param {string} message String to write.
  * @returns String to write.
  */
-export function logMessage(message) {
+function logMessage(message) {
   console.log(message);
 
   return message;
@@ -140,7 +140,7 @@ const SampleNamespace = {};
  * @param {number} n First number
  * @returns {number} The sum of the two numbers.
  */
-export function TEST(n) {
+function TEST(n) {
     return SampleNamespace.dispatchCalculationJob("TEST", [n]);
 }
 
@@ -150,7 +150,7 @@ export function TEST(n) {
  * @param {number} n First number
  * @returns {number} The sum of the two numbers.
  */
-export function TEST_PROMISE(n) {
+function TEST_PROMISE(n) {
     return SampleNamespace.dispatchCalculationJob("TEST_PROMISE", [n]);
 }
 
@@ -160,7 +160,7 @@ export function TEST_PROMISE(n) {
  * @param {number} n First number
  * @returns {number} The sum of the two numbers.
  */
-export function TEST_ERROR(n) {
+function TEST_ERROR(n) {
     return SampleNamespace.dispatchCalculationJob("TEST_ERROR", [n]);
 }
 
@@ -170,7 +170,7 @@ export function TEST_ERROR(n) {
  * @param {number} n First number
  * @returns {number} The sum of the two numbers.
  */
-export function TEST_ERROR_PROMISE(n) {
+function TEST_ERROR_PROMISE(n) {
     return SampleNamespace.dispatchCalculationJob("TEST_ERROR_PROMISE", [n]);
 }
 
@@ -180,7 +180,7 @@ export function TEST_ERROR_PROMISE(n) {
  * @param {number} n First number
  * @returns {number} The sum of the two numbers.
  */
-export function TEST_UI_THREAD(n) {
+function TEST_UI_THREAD(n) {
     let ret = 0;
     for (let i = 0; i < n; i++) {
         ret += Math.tan(Math.atan(Math.tan(Math.atan(Math.tan(Math.atan(Math.tan(Math.atan(Math.tan(Math.atan(50))))))))));
